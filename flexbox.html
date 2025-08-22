@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>4 Kolom Flexbox Responsif</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .item {
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px;
+      flex: 1 1 calc(25% - 20px); /* 4 kolom, dikurangi gap */
+      box-sizing: border-box;
+      text-align: center;
+      border-radius: 8px;
+    }
+
+    /* Tablet & layar sedang */
+    @media (max-width: 768px) {
+      .item {
+        flex: 1 1 calc(50% - 20px); /* 2 kolom */
+      }
+    }
+
+    /* HP & layar kecil */
+    @media (max-width: 480px) {
+      .item {
+        flex: 1 1 100%; /* 1 kolom */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item">Kolom 1</div>
+    <div class="item">Kolom 2</div>
+    <div class="item">Kolom 3</div>
+    <div class="item">Kolom 4</div>
+  </div>
+</body>
+</html>
